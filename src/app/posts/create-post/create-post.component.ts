@@ -18,11 +18,15 @@ export class CreatePostCompenent{
     if(form.invalid){
       return;
     }
+
     const post: Post = {
+      id: null,
       title: form.value.title,
       content: form.value.content
     };
-    console.log(post);
+
     this.postsService.addPost(post)
+
+    form.reset();
 }
 }
